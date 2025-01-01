@@ -23,3 +23,14 @@ export const tracking = createTable(
       .notNull(),
   }
 );
+
+export const message = createTable(
+  "message",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    content: text("content"),
+    created_at: timestamp("created_at", { withTimezone: true })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+  }
+);
