@@ -155,7 +155,9 @@ export default function HomePageClient({
         </Card>
 
         <footer className="text-center text-white mt-4">
-          made with love by <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline">aidan gollan</a>
+          <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline">this project </a> 
+          was with love by 
+          <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline"> aidan gollan</a> 
         </footer>
       </main>
     );
