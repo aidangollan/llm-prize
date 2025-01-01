@@ -2,6 +2,7 @@
 
 import { Groq } from "groq-sdk";
 import { type Message } from "~/types";
+import { track } from "./track";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY
@@ -67,6 +68,8 @@ export async function* generateResponse({
     temperature: 0,
     stream: true
   });
+
+  await track({name: "message"});
 
   for await (const chunk of completion) {
     if (chunk.choices[0]?.delta?.content) {

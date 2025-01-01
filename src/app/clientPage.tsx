@@ -121,22 +121,19 @@ export default function HomePageClient({
       };
 
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center bg-[#1a1a1a] pt-8">
-        <div className="text-center text-white mb-4">
-          <p>
-            cryptohunt.lol
-          </p>
-          <p className="text-2xl">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-[#1a1a1a] pt-6">
+        <div className="text-center text-white mb-3">
+          <p className="text-xl">
             $1000 up for grabs at <a href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" target="_blank" className="text-green-400 hover:underline">bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29</a>
           </p>
-          <p className="mt-2">the llm has the secret, can you get it to crack?</p>
-          <p className="mt-2">{numFailed} have failed so far.</p>
+          <p className="mt-1 text-sm">the llm has the secret, can you get it to crack?</p>
+          <p className="mt-1 text-sm">{numFailed} have failed so far.</p>
         </div>
 
-        <Card className="w-full max-w-3xl h-[700px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
+        <Card className="w-full max-w-2xl h-[490px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
           <div className="flex flex-col h-full">
             <TerminalHeader />
-            <ScrollArea className="flex-1 p-4 font-mono">
+            <ScrollArea className="flex-1 p-3 font-mono text-sm">
               <InitializationMessages 
                 initLines={initLines} 
                 isInitialized={isInitialized} 
@@ -154,7 +151,7 @@ export default function HomePageClient({
           </div>
         </Card>
 
-        <footer className="text-center text-white mt-4">
+        <footer className="text-center text-white mt-3 text-sm">
           <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline">this project </a> 
           was with love by 
           <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline"> aidan gollan</a> 

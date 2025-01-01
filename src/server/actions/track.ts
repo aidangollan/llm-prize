@@ -2,19 +2,23 @@
 
 import { eq } from "drizzle-orm";
 import { db } from "../db"
-import { view } from "../db/schema"
+import { tracking } from "../db/schema"
 
-export async function trackView(): Promise<number> {
-    const viewObj = await db.query.view.findFirst();
+export async function track({
+    name
+} : {
+    name: string
+}): Promise<number> {
+    const trackingObj = await db.query.tracking.findFirst();
     
-    const prevViews = viewObj?.views ?? 0;
+    const prevNum = trackingObj?.number ?? 0;
     
-    const newNumViews = await db.update(view)
+    const newNumViews = await db.update(tracking)
         .set({
-            views: prevViews + 1
+            number: prevNum + 1
         })
-        .where(eq(view.id, viewObj!.id))
+        .where(eq(tracking.name, name))
         .returning();
 
-    return newNumViews[0]?.views ?? 0;
+    return newNumViews[0]?.number ?? 0;
 }

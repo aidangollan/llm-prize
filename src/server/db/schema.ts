@@ -7,15 +7,17 @@ import {
   pgTableCreator,
   timestamp,
   uuid,
+  text
 } from "drizzle-orm/pg-core";
 
 export const createTable = pgTableCreator((name) => `llm-prize_${name}`);
 
-export const view = createTable(
-  "view",
+export const tracking = createTable(
+  "tracking",
   {
     id: uuid("id").primaryKey().defaultRandom(),
-    views: integer("views").default(0),
+    number: integer("number").default(0),
+    name: text("name"),
     created_at: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
