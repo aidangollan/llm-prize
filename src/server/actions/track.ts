@@ -9,7 +9,9 @@ export async function track({
 } : {
     name: string
 }): Promise<number> {
-    const trackingObj = await db.query.tracking.findFirst();
+    const trackingObj = await db.query.tracking.findFirst({
+        where: (model, { eq }) => eq(model.name, name)
+    });
     
     const prevNum = trackingObj?.number ?? 0;
     
