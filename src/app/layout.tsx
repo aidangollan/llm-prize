@@ -4,8 +4,8 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "your app",
-  description: "placeholder description",
+  title: "crypto hunt",
+  description: "can you find the secret?",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
