@@ -11,9 +11,11 @@ import { MessageList } from '~/components/terminal/message-list';
 import { TerminalInput } from '~/components/terminal/terminal-input';
 
 export default function HomePageClient({
-    numFailed
+    numFailedUsers,
+    numFailedMessages
 } : {
-    numFailed: number
+    numFailedUsers: number;
+    numFailedMessages: number;
 }) {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState('');
@@ -127,7 +129,7 @@ export default function HomePageClient({
             $1000 up for grabs at <a href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" target="_blank" className="text-green-400 hover:underline">bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29</a>
           </p>
           <p className="mt-1 text-sm">the llm has the secret, can you get it to crack?</p>
-          <p className="mt-1 text-sm">{numFailed} have failed so far.</p>
+          <p className="mt-1 text-sm">{numFailedUsers} people have tried {numFailedMessages} times so far.</p>
         </div>
 
         <Card className="w-full max-w-2xl h-[490px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
