@@ -29,6 +29,8 @@ export const message = createTable(
   {
     id: uuid("id").primaryKey().defaultRandom(),
     content: text("content"),
+    type: text("type"),
+    human_question: text("human_question"),
     created_at: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
