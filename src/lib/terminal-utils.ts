@@ -16,6 +16,7 @@ export const streamResponse = async (
         callback(chunk);
       }
     } catch (error) {
+      console.log(error);
       try {
         // eslint-disable-next-line @typescript-eslint/await-thenable
         const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
