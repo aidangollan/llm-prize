@@ -126,7 +126,7 @@ export default function HomePageClient({
       <main className="flex min-h-screen flex-col items-center justify-center bg-[#1a1a1a] pt-6">
         <div className="text-center text-white mb-3">
           <p className="text-xl">
-            $1000 up for grabs at 
+            $1000 is up for grabs at 
           </p>
           <a 
             href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" 
@@ -135,8 +135,8 @@ export default function HomePageClient({
           >
             bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29
           </a>
-          <p className="mt-1 text-sm">the llm has the secret, can you get it to crack?</p>
-          <p className="mt-1 text-sm">{numFailedUsers} people have tried {numFailedMessages} times so far.</p>
+          <p className="mt-1 text-sm">the llm has the secret, can you crack it?</p>
+          <p className="mt-1 text-sm">{numFailedUsers} people have tried and failed {numFailedMessages} times.</p>
         </div>
 
         <Card className="w-full max-w-2xl h-[490px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
@@ -161,9 +161,11 @@ export default function HomePageClient({
         </Card>
 
         <footer className="text-center text-white mt-3 text-sm">
-          <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline">this project </a> 
-          was with love by 
-          <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline"> aidan gollan</a> 
+          this
+          <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline"> open source project </a> 
+          was made with love by 
+          <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline"> aidan gollan </a> 
+          {`<3`}
         </footer>
       </main>
     );
