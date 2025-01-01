@@ -1,4 +1,10 @@
-export const TerminalHeader = () => {
+import { RefreshCw } from 'lucide-react';
+
+export const TerminalHeader = ({ 
+  onReset 
+}: {
+  onReset: () => void;
+}) => {
     return (
       <div className="bg-[#2a2a2a] p-2 border-b border-[#333333] flex items-center relative">
         <div className="flex gap-2">
@@ -15,6 +21,13 @@ export const TerminalHeader = () => {
         <div className="absolute left-0 right-0 text-center text-[#666666] text-sm font-mono">
           CRYPTO_HUNT_TERMINAL_v1.0
         </div>
+        <button 
+          onClick={onReset}
+          className="absolute right-2 text-[#666666] hover:text-white transition-colors duration-200"
+          title="Reset conversation"
+        >
+          <RefreshCw size={16} />
+        </button>
       </div>
     );
 };

@@ -80,6 +80,12 @@ export default function HomePageClient({
   
       void typeWriter(0, "");
     }, []);
+
+    const resetConversation = () => {
+      setMessages([]);
+      setInput('');
+      setIsStreaming(false);
+    };
   
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -141,7 +147,9 @@ export default function HomePageClient({
 
         <Card className="w-full max-w-2xl h-[490px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
           <div className="flex flex-col h-full">
-            <TerminalHeader />
+            <TerminalHeader 
+              onReset={resetConversation} 
+            />
             <ScrollArea className="flex-1 p-3 font-mono text-sm">
               <InitializationMessages 
                 initLines={initLines} 
