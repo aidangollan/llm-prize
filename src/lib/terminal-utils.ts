@@ -1,3 +1,4 @@
+import { GPT } from "~/constants/llm";
 import { generateResponse } from "~/server/actions/llm";
 import { addMessage } from "~/server/actions/message";
 import { type Message } from "~/types";
@@ -11,7 +12,7 @@ export const streamResponse = async (
     try {
       onStart();
       // eslint-disable-next-line @typescript-eslint/await-thenable
-      const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
+      const responseGenerator = await generateResponse({ history: history, message: message, type: GPT });
       
       let response = '';
 
@@ -27,7 +28,7 @@ export const streamResponse = async (
       });
     } catch (error) {
       console.log(error);
-      callback("sorry, there was an error processing your request. go yell at aidan on twitter.");
+      callback("sorry, there was an error processing your request. go yell at aidan on twitter or something.");
     }
 };
   
