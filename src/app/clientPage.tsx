@@ -126,8 +126,15 @@ export default function HomePageClient({
       <main className="flex min-h-screen flex-col items-center justify-center bg-[#1a1a1a] pt-6">
         <div className="text-center text-white mb-3">
           <p className="text-xl">
-            $1000 up for grabs at <a href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" target="_blank" className="text-green-400 hover:underline">bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29</a>
+            $1000 up for grabs at 
           </p>
+          <a 
+            href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" 
+            target="_blank" 
+            className="text-green-400 hover:underline"
+          >
+            bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29
+          </a>
           <p className="mt-1 text-sm">the llm has the secret, can you get it to crack?</p>
           <p className="mt-1 text-sm">{numFailedUsers} people have tried {numFailedMessages} times so far.</p>
         </div>
