@@ -135,11 +135,11 @@ export default function HomePageClient({
             $1000 is up for grabs at 
           </p>
           <a 
-            href="https://www.blockonomics.co/#/search?q=bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29" 
+            href="https://www.blockonomics.co/#/search?q=bc1q50lg840en53wzhv73entl4fyj8jd08l6pz5hy0" 
             target="_blank" 
             className="text-green-400 hover:underline"
           >
-            bc1qwsdstq2n3ckx7t2sukvq5w06lvuheylt5csv29
+            bc1q50lg840en53wzhv73entl4fyj8jd08l6pz5hy0
           </a>
           <p className="mt-1 text-sm">the llm has the secret, can you crack it?</p>
           <p className="mt-1 text-sm">{numFailedUsers} people have tried and failed {numFailedMessages} times.</p>
