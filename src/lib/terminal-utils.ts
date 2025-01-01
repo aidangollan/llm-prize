@@ -10,9 +10,8 @@ export const streamResponse = async (
 ): Promise<void> => {
     try {
       onStart();
-      console.log("groq")
       // eslint-disable-next-line @typescript-eslint/await-thenable
-      const responseGenerator = await generateResponse({ history: history, message: message, type: 'groq' });
+      const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
       
       let response = '';
 
@@ -28,27 +27,7 @@ export const streamResponse = async (
       });
     } catch (error) {
       console.log(error);
-      console.log("gpt")
-      try {
-        // eslint-disable-next-line @typescript-eslint/await-thenable
-        const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
-
-        let response = '';
-      
-        for await (const chunk of responseGenerator) {
-          callback(chunk);
-          response += chunk;
-        }
-
-        void addMessage({
-          content: response,
-          type: 'robot',
-          human_question: message
-        });
-      } catch (error) {
-        console.log(error);
-        callback("sorry, there was an error processing your request. go yell at aidan on twitter.");
-      }
+      callback("sorry, there was an error processing your request. go yell at aidan on twitter.");
     }
 };
   
