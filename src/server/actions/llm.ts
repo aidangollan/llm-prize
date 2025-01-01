@@ -68,6 +68,7 @@ export async function* generateResponse({
   await track({name: "message"});
 
   if (type === 'groq') {
+    await track({name: "groq"});
     const messages = [
       ...history.map(msg => ({
         role: msg.role,
@@ -90,6 +91,7 @@ export async function* generateResponse({
       }
     }
   } else {
+    await track({name: "gpt"});
     const messages = [
       ...history.map(msg => 
         msg.role === 'user' 
