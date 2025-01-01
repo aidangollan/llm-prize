@@ -17,6 +17,7 @@ export const streamResponse = async (
       }
     } catch (error) {
       try {
+        // eslint-disable-next-line @typescript-eslint/await-thenable
         const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
       
         for await (const chunk of responseGenerator) {
