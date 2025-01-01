@@ -11,6 +11,7 @@ export const streamResponse = async (
     try {
       onStart();
       console.log("groq")
+      void addMessage({content: message});
       // eslint-disable-next-line @typescript-eslint/await-thenable
       const responseGenerator = await generateResponse({ history: history, message: message, type: 'groq' });
       
