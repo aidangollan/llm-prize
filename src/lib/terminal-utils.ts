@@ -9,6 +9,7 @@ export const streamResponse = async (
 ): Promise<void> => {
     try {
       onStart();
+      console.log("groq")
       // eslint-disable-next-line @typescript-eslint/await-thenable
       const responseGenerator = await generateResponse({ history: history, message: message, type: 'groq' });
       
@@ -17,6 +18,7 @@ export const streamResponse = async (
       }
     } catch (error) {
       console.log(error);
+      console.log("gpt")
       try {
         // eslint-disable-next-line @typescript-eslint/await-thenable
         const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
