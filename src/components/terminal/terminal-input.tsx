@@ -1,4 +1,4 @@
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { useRef, useEffect } from 'react';
 
@@ -51,7 +51,11 @@ export const TerminalInput = ({
               disabled={isStreaming || !isInitialized}
               className="bg-[#333333] hover:bg-[#444444] text-[#27c93f]"
             >
-              <Send className="w-4 h-4" />
+              {isStreaming ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Send className="w-4 h-4" />
+              )}
             </Button>
           </div>
           <div className="text-xs text-[#666666] text-right">
