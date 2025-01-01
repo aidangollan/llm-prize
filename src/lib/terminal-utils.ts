@@ -16,8 +16,16 @@ export const streamResponse = async (
         callback(chunk);
       }
     } catch (error) {
-      console.log(error);
-      callback("sorry, there was an error processing your request. go yell at aidan on twitter.");
+      try {
+        const responseGenerator = await generateResponse({ history: history, message: message, type: 'gpt' });
+      
+        for await (const chunk of responseGenerator) {
+          callback(chunk);
+        }
+      } catch (error) {
+        console.log(error);
+        callback("sorry, there was an error processing your request. go yell at aidan on twitter.");
+      }
     }
 };
   
