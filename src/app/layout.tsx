@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "crypto hunt",
-  description: "can you find the secret?",
+  description: "can you find the secret the llm keeps?",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

@@ -4,8 +4,10 @@ import HomePageClient from "./clientPage";
 export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
-  const numFailedUsers = await track({name: "views"});
-  const numFailedMessages = await track({name: "message"});
+  const [numFailedUsers, numFailedMessages] = await Promise.all([
+    track({name: "views"}),
+    track({name: "message"})
+  ]);
 
   return (
     <HomePageClient 

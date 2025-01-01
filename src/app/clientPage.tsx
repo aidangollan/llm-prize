@@ -142,7 +142,7 @@ export default function HomePageClient({
             bc1q50lg840en53wzhv73entl4fyj8jd08l6pz5hy0
           </a>
           <p className="mt-1 text-sm">the llm has the secret, can you crack it?</p>
-          <p className="mt-1 text-sm">{numFailedUsers} people have tried and failed {numFailedMessages} times.</p>
+          <p className="mt-1 text-sm">{numFailedUsers} people have tried and failed {numFailedMessages} times</p>
         </div>
 
         <Card className="w-full max-w-2xl h-[490px] bg-[#232323] border-[#333333] shadow-2xl overflow-hidden">
@@ -169,11 +169,11 @@ export default function HomePageClient({
         </Card>
 
         <footer className="text-center text-white mt-3 text-sm">
-          this
-          <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline"> open source project </a> 
-          was made with love by 
-          <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline"> aidan gollan </a> 
-          {`<3`}
+          {`this `}
+          <a href="https://github.com/aidangollan/llm-prize" target="_blank" className="text-green-400 hover:underline">open source project</a> 
+          {` was made with love by `}
+          <a href="https://www.linkedin.com/in/aidangollan/" target="_blank" className="text-green-400 hover:underline">aidan gollan</a> 
+          {` <3`}
         </footer>
       </main>
     );
